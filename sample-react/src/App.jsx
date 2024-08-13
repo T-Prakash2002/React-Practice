@@ -1,23 +1,13 @@
-import { useState,useEffect } from 'react'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
- useEffect(() => {
-	console.log("Component rendered successfully");
-  }, []);
-   return (
-	<div>
-  	<button onClick={() => setCount(count + 1)}>Click me</button>
-    <Display count={count} />
-	</div>
-  );
+  const names = ["Brian", "Paul", "Krug", "Halley"];
+  const listItems = names.map((name,index) => <li key={index}>{name}</li>);
+  return <ul>{listItems}</ul>;
 }
 
-function Display({count}){
-    	return(
-        <p>You clicked {count} times</p>
-      )
-}
+export default App;
 
-export default App
+// Unique Key is not mentioned
+// after commit this code
